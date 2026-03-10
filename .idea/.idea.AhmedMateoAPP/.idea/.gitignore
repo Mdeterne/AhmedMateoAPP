@@ -1,0 +1,57 @@
+## .NET Core / C#
+bin/
+obj/
+out/
+.library/
+
+## Visual Studio
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+.suo
+*.userprefs
+
+## Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+## MAUI / Xamarin Specific
+# Les fichiers de ressources générés (fonts, images)
+/Resources/Raw/
+/Resources/Splash/
+
+## Android
+*.keystore
+!debug.keystore
+*.ap_
+*.apk
+*.aab
+
+## iOS / Mac Catalyst
+*.xcworkspace
+*.ds_store
+Thumbs.db
+xcuserdata/
+
+## Windows (WinUI)
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+
+## OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+
+## Publishing
+publish/
