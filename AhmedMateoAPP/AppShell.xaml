@@ -4,11 +4,38 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AhmedMateoAPP"
-    Title="AhmedMateoAPP">
+    Title="AhmedMateoAPP"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarForegroundColor="White"
+    Shell.TabBarTitleColor="White"
+    Shell.TabBarUnselectedColor="#B4FFFFFF"
+    Shell.TabBarBackgroundColor="{StaticResource Primary}">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.TitleView>
+        <Image Source="app_logo.png" HeightRequest="44" Margin="0,0,10,0" />
+    </Shell.TitleView>
+
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Icon="icon_home.svg"
+            Route="MainPage" />
+        <ShellContent
+            Title="Pokedex"
+            ContentTemplate="{DataTemplate local:PokedexPage}"
+            Icon="icon_pokedex.svg"
+            Route="PokedexPage" />
+        <ShellContent
+            Title="Favorites"
+            ContentTemplate="{DataTemplate local:FavoritesPage}"
+            Icon="icon_favorites.svg"
+            Route="FavoritesPage" />
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate local:ProfilePage}"
+            Icon="icon_profile.svg"
+            Route="ProfilePage" />
+    </TabBar>
 
 </Shell>
