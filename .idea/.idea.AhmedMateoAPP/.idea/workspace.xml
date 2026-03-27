@@ -12,26 +12,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a439f338-9d7c-4a46-a6fc-020e78bb64bc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/FavoritesPage.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/FavoritesPage.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/GifPage.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/GifPage.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Models/PokemonItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/PokedexPage.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/PokedexPage.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/ProfilePage.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/ProfilePage.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Resources/Images/animation.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Resources/Images/app_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Resources/Images/bulbasaur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Resources/Images/charmander.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Resources/Images/pikachu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Resources/Images/pokemon_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Resources/Images/pokemon_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/AddPokemonPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Converters/BoolInverterConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Models/PokemonApiResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Models/PokemonDetail.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/PokemonDetailPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/PokemonDetailPage.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/Services/PokemonService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/ViewModels/AddPokemonViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/ViewModels/BaseViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AhmedMateoAPP/ViewModels/PokedexViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AhmedMateoAPP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AhmedMateoAPP/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AhmedMateoAPP/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AhmedMateoAPP/App.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AhmedMateoAPP/AppShell.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AhmedMateoAPP/AppShell.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AhmedMateoAPP/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AhmedMateoAPP/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AhmedMateoAPP/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AhmedMateoAPP/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AhmedMateoAPP/AppShell.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AhmedMateoAPP/AppShell.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AhmedMateoAPP/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AhmedMateoAPP/MauiProgram.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AhmedMateoAPP/PokedexPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AhmedMateoAPP/PokedexPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AhmedMateoAPP/PokedexPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AhmedMateoAPP/PokedexPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,26 +57,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.AhmedMateoAPP: Windows Machine.executor&quot;: &quot;Run&quot;,
-    &quot;Android.AhmedMateoAPP.executor&quot;: &quot;Run&quot;,
-    &quot;Android.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;iOS.AhmedMateoAPP.executor&quot;: &quot;Run&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.AhmedMateoAPP: Windows Machine.executor": "Run",
+    "Android.AhmedMateoAPP.executor": "Run",
+    "Android.Unnamed.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "master",
+    "iOS.AhmedMateoAPP.executor": "Run",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Android.AhmedMateoAPP">
     <configuration name="AhmedMateoAPP: Windows Machine" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AhmedMateoAPP/AhmedMateoAPP.csproj" />
@@ -156,6 +153,9 @@
       <workItem from="1773153536604" duration="73000" />
       <workItem from="1773153657350" duration="2391000" />
       <workItem from="1773156149401" duration="3661000" />
+      <workItem from="1773992075920" duration="2401000" />
+      <workItem from="1773995549985" duration="1093000" />
+      <workItem from="1774597025231" duration="4703000" />
     </task>
     <servers />
   </component>

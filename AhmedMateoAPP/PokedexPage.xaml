@@ -1,12 +1,64 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AhmedMateoAPP.Models"
+             xmlns:viewmodels="clr-namespace:AhmedMateoAPP.ViewModels"
              x:Class="AhmedMateoAPP.PokedexPage"
-             Title="Pokedex">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Pokedex Page!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:DataType="viewmodels:PokedexViewModel"
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="Auto, *">
+        <!-- Barre de recherche -->
+        <SearchBar Grid.Row="0" 
+                   Placeholder="Rechercher un Pokémon..."
+                   SearchCommand="{Binding SearchCommand}"
+                   SearchCommandParameter="{Binding Text, Source={RelativeSource Self}}" />
+
+        <!-- Indicateur de chargement -->
+        <ActivityIndicator Grid.Row="1"
+                           IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+
+        <!-- Liste des Pokémon (SelectionMode enlevé au profit de TapGestureRecognizer) -->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Pokemons}"
+                        SelectionMode="None"
+                        IsVisible="{Binding IsBusy, Converter={x:StaticResource BoolInverter}, ConverterParameter=false}"
+                        Margin="10">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:PokemonDetail">
+                    <Frame CornerRadius="10" 
+                           Padding="10" 
+                           HasShadow="True"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}">
+                        
+                        <!-- Remplacement de l'événement SelectionChanged par une commande sur chaque élément -->
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:PokedexViewModel}}, Path=GoToDetailsCommand}" 
+                                CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                            <Image Source="{Binding ImageUrl}" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100" 
+                                   Aspect="AspectFit" />
+                            <Label Text="{Binding Name}" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   HorizontalOptions="Center"
+                                   TextTransform="Uppercase" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

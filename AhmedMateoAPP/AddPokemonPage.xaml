@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:AhmedMateoAPP.ViewModels"
+             x:Class="AhmedMateoAPP.AddPokemonPage"
+             x:DataType="viewmodels:AddPokemonViewModel"
+             Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Nouveau Pokémon" Style="{StaticResource Headline}" HorizontalOptions="Center" />
+
+            <Frame Padding="10" CornerRadius="10">
+                <VerticalStackLayout Spacing="10">
+                    <Entry Placeholder="Nom du Pokémon (obligatoire)" Text="{Binding Name}" />
+                    <Editor Placeholder="Description" Text="{Binding Description}" HeightRequest="120" AutoSize="Disabled" />
+                    <Entry Placeholder="URL de l'image (optionnel)" Text="{Binding ImageUrl}" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Button Grid.Column="0" Text="Annuler" Command="{Binding CancelCommand}" BackgroundColor="{StaticResource Gray300}" TextColor="{StaticResource Black}" />
+                <Button Grid.Column="1" Text="Sauvegarder" Command="{Binding SaveCommand}" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

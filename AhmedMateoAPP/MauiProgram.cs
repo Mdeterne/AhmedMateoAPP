@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using AhmedMateoAPP.Services;
+using AhmedMateoAPP.ViewModels;
 
 namespace AhmedMateoAPP;
 
@@ -18,6 +20,15 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
+
+        // Injection des dépendances
+        builder.Services.AddSingleton<PokemonService>();
+        
+        builder.Services.AddTransient<PokedexViewModel>();
+        builder.Services.AddTransient<PokedexPage>();
+        
+        builder.Services.AddTransient<AddPokemonViewModel>();
+        builder.Services.AddTransient<AddPokemonPage>();
 
         return builder.Build();
     }

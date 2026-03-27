@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AhmedMateoAPP.Models"
+             x:Class="AhmedMateoAPP.PokemonDetailPage"
+             x:DataType="models:PokemonDetail"
+             Title="{Binding Name}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            
+            <Image Source="{Binding ImageUrl}" 
+                   HeightRequest="250" 
+                   WidthRequest="250"
+                   HorizontalOptions="Center" 
+                   Aspect="AspectFit" />
+
+            <Label Text="{Binding Name}" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextTransform="Uppercase" />
+
+            <Frame HasShadow="True" CornerRadius="15" Padding="20">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Caractéristiques" FontSize="20" FontAttributes="Bold" />
+                    
+                    <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, *">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Poids : " FontAttributes="Bold" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Weight, StringFormat='{0} g'}" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Taille : " FontAttributes="Bold" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Height, StringFormat='{0} cm'}" />
+                    </Grid>
+
+                    <Label Text="Description :" FontAttributes="Bold" Margin="0,10,0,0"/>
+                    <Label Text="{Binding Description}" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

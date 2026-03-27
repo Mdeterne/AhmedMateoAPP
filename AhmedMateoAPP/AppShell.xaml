@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:AhmedMateoAPP"
     Title="AhmedMateoAPP"
     Shell.FlyoutBehavior="Disabled"
-    Shell.TabBarForegroundColor="White"
-    Shell.TabBarTitleColor="White"
+    Shell.TabBarForegroundColor="red"
+    Shell.TabBarTitleColor="red"
     Shell.TabBarUnselectedColor="#B4FFFFFF"
     Shell.TabBarBackgroundColor="{StaticResource Primary}">
 
@@ -27,10 +27,10 @@
             Icon="icon_pokedex.svg"
             Route="PokedexPage" />
         <ShellContent
-            Title="Favorites"
-            ContentTemplate="{DataTemplate local:FavoritesPage}"
-            Icon="icon_favorites.svg"
-            Route="FavoritesPage" />
+            Title="Ajouter"
+            ContentTemplate="{DataTemplate local:AddPokemonPage}"
+            Icon="icon_add.svg"
+            Route="AddPokemonPage" />
         <ShellContent
             Title="Profile"
             ContentTemplate="{DataTemplate local:ProfilePage}"
