@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AhmedMateoAPP.Models"
+             xmlns:viewmodels="clr-namespace:AhmedMateoAPP.ViewModels"
+             x:Class="AhmedMateoAPP.TeamPage"
+             x:DataType="viewmodels:TeamViewModel"
+             Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Section de l'Équipe -->
+            <Label Text="Mon Équipe (Max 6)" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="Cliquez sur un membre pour le retirer" FontSize="12" TextColor="Gray" HorizontalOptions="Center" Margin="0,-15,0,0"/>
+
+            <!-- Si l'équipe est vide -->
+            <Label Text="Votre équipe est vide. Ajoutez des Pokémon depuis vos favoris." 
+                   IsVisible="{Binding Team.Count, Converter={x:StaticResource InvertedIntToBoolConverter}}"
+                   HorizontalOptions="Center" 
+                   TextColor="Gray" />
+
+            <CollectionView ItemsSource="{Binding Team}" 
+                            HeightRequest="150"
+                            HorizontalScrollBarVisibility="Always"
+                            SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PokemonDetail">
+                        <Frame CornerRadius="10" Padding="5" HasShadow="True" WidthRequest="110" HeightRequest="130">
+                            <!-- Retirer de l'équipe au clic -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:TeamViewModel}}, Path=RemoveFromTeamCommand}" 
+                                    CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
+
+                            <VerticalStackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Image Source="{Binding ImageUrl}" HeightRequest="60" WidthRequest="60" Aspect="AspectFit" />
+                                <Label Text="{Binding Name}" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextTransform="Uppercase" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Ligne de séparation -->
+            <BoxView HeightRequest="2" Color="LightGray" Margin="0,10" />
+
+            <!-- Section des Favoris -->
+            <Label Text="Mes Favoris" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="Cliquez sur un favori pour l'ajouter à l'équipe" FontSize="12" TextColor="Gray" HorizontalOptions="Center" Margin="0,-15,0,0"/>
+
+            <!-- Si aucun favori -->
+            <Label Text="Vous n'avez pas de favoris. Ajoutez-en depuis le Pokédex." 
+                   IsVisible="{Binding Favorites.Count, Converter={x:StaticResource InvertedIntToBoolConverter}}"
+                   HorizontalOptions="Center" 
+                   TextColor="Gray" />
+
+            <CollectionView ItemsSource="{Binding Favorites}" SelectionMode="None" Margin="0,10,0,0">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PokemonDetail">
+                        <Frame CornerRadius="10" Padding="10" HasShadow="True" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}">
+                            <!-- Ajouter à l'équipe au clic -->
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:TeamViewModel}}, Path=AddToTeamCommand}" 
+                                    CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
+
+                            <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                                <Image Source="{Binding ImageUrl}" HeightRequest="80" WidthRequest="80" Aspect="AspectFit" />
+                                <Label Text="{Binding Name}" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center" TextTransform="Uppercase" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

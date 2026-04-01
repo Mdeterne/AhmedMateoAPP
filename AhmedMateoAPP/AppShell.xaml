@@ -32,10 +32,10 @@
             Icon="icon_add.svg"
             Route="AddPokemonPage" />
         <ShellContent
-            Title="Profile"
-            ContentTemplate="{DataTemplate local:ProfilePage}"
+            Title="Équipe"
+            ContentTemplate="{DataTemplate local:TeamPage}"
             Icon="icon_profile.svg"
-            Route="ProfilePage" />
+            Route="TeamPage" />
     </TabBar>
 
 </Shell>

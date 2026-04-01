@@ -25,6 +25,15 @@ public class PokemonDetail
     // Propriété pour l'image, gère à la fois l'URL de l'API et un chemin de fichier local
     public string ImageUrl { get; set; } = string.Empty;
 
+    // Nouvelle propriété pour savoir s'il est dans les favoris
+    private bool _isFavorite;
+    [JsonIgnore]
+    public bool IsFavorite
+    {
+        get => _isFavorite;
+        set => _isFavorite = value;
+    }
+
     // Constructeur pour la désérialisation JSON
     public PokemonDetail() { }
 

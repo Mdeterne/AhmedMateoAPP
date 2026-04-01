@@ -21,14 +21,22 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
-        // Injection des dépendances
+        // Injection des Services (Singletons pour garder l'état)
         builder.Services.AddSingleton<PokemonService>();
+        builder.Services.AddSingleton<TeamService>();
         
+        // Injection des ViewModels et Pages
         builder.Services.AddTransient<PokedexViewModel>();
         builder.Services.AddTransient<PokedexPage>();
         
         builder.Services.AddTransient<AddPokemonViewModel>();
         builder.Services.AddTransient<AddPokemonPage>();
+
+        builder.Services.AddTransient<PokemonDetailViewModel>();
+        builder.Services.AddTransient<PokemonDetailPage>();
+
+        builder.Services.AddTransient<TeamViewModel>();
+        builder.Services.AddTransient<TeamPage>();
 
         return builder.Build();
     }
